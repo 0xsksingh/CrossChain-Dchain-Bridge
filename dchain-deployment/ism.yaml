@@ -1,0 +1,4 @@
+dchaintestnet:
+  threshold: 1
+  validators:
+    - "0xba1A058B7f452e626e768724189e20E03b3831fF"

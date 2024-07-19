@@ -1,0 +1,16 @@
+{
+  "sepolia": {
+    "staticMerkleRootMultisigIsmFactory": "0x0a71AcC99967829eE305a285750017C4916Ca269",
+    "staticMessageIdMultisigIsmFactory": "0xFEb9585b2f948c1eD74034205a7439261a9d27DD",
+    "staticAggregationIsmFactory": "0xC83e12EF2627ACE445C298e6eC418684918a6002",
+    "staticAggregationHookFactory": "0x160C28C92cA453570aD7C031972b58d5Dd128F72",
+    "domainRoutingIsmFactory": "0x3F100cBBE5FD5466BdB4B3a15Ac226957e7965Ad"
+  },
+  "dchaintestnet": {
+    "staticMerkleRootMultisigIsmFactory": "0xD2012ffBe7c10f1df02fABd6Db69A00087B2D9C2",
+    "staticMessageIdMultisigIsmFactory": "0x59B16392e2632e55BFb227fE7E03ae9dab1E85d6",
+    "staticAggregationIsmFactory": "0xB1AE25c3f61165a465e0decFaa186252e627B03B",
+    "staticAggregationHookFactory": "0xF1b5260BDD0412EF443feEE6a3B1e92cae44a585",
+    "domainRoutingIsmFactory": "0xACbb41C668bceAf5914eF5a1872017bd8E4d220b"
+  }
+}
