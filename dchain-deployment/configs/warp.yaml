@@ -1,0 +1,22 @@
+sepolia:
+  type: collateral
+  token: "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8" # Collateral/vault address. Required for collateral types
+  owner: "0xba1A058B7f452e626e768724189e20E03b3831fF" # Optional owner address for synthetic token
+  mailbox: "0xfFAEF09B3cd11D9b20d1a19bECca54EEC2884766" # mailbox address route
+  interchainGasPaymaster: "0x6f2756380FD49228ae25Aa7F2817993cB74Ecc56" # Optional interchainGasPaymaster address
+  isNft: false # If the token is an NFT (ERC721), set to true
+  # You can optionally set the token metadata
+  # name: "MyCollateralToken"
+  # symbol: "MCT"
+  # totalSupply: 10000000
+
+dchaintestnet:
+  type: synthetic
+  # token: "0x123" # Collateral/vault address. Required for collateral types
+  # owner: "0x123" # Optional owner address for synthetic token
+  mailbox: "0x17A2901887371810aE6193416B6763226BbD9202" # mailbox address route
+  interchainGasPaymaster: "0x0000000000000000000000000000000000000000" # Optional interchainGasPaymaster address
+  # You can optionally set the token metadata
+  # name: "MySyntheticToken"
+  # symbol: "MST"
+  # totalSupply: 10000000
