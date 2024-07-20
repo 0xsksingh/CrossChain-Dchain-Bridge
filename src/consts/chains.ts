@@ -1,4 +1,3 @@
-import { sepolia } from '@hyperlane-xyz/registry';
 import { ChainMap, ChainMetadata, ExplorerFamily } from '@hyperlane-xyz/sdk';
 import { ProtocolType } from '@hyperlane-xyz/utils';
 
@@ -30,5 +29,27 @@ export const chains: ChainMap<ChainMetadata & { mailbox?: Address }> = {
     },
     logoURI: '/dchain.png',
   },
-  sepolia : sepolia
+  sepolia : {
+    protocol: ProtocolType.Ethereum,
+    chainId: 11155111,
+    domainId: 11155111,
+    name: 'sepolia',
+    displayName: 'Sepolia',
+    nativeToken: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+    rpcUrls: [{ http: 'https://rpc.sepolia.org' }],
+    blockExplorers: [
+      {
+        name: 'Block Explorer',
+        url: 'https://sepolia.etherscan.io',
+        apiUrl: 'https://api.mycustomchain-scan.com/api',
+        family: ExplorerFamily.Etherscan,
+      },
+    ],
+    blocks: {
+      confirmations: 1,
+      reorgPeriod: 1,
+      estimateBlockTime: 10,
+    },
+    logoURI: 'https://raw.githubusercontent.com/hyperlane-xyz/hyperlane-registry/main/chains/ethereum/logo.svg',
+  }
 };
