@@ -1,17 +1,17 @@
 /** @type {import('next').NextConfig} */
 
-const { version } = require('./package.json')
+const { version } = require('./package.json');
 const { withSentryConfig } = require("@sentry/nextjs");
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production';
 
 // Sometimes useful to disable this during development
 const ENABLE_CSP_HEADER = true;
 const FRAME_SRC_HOSTS = ['https://*.walletconnect.com', 'https://*.walletconnect.org','https://*.solflare.com'];
-const STYLE_SRC_HOSTS = []
+const STYLE_SRC_HOSTS = [];
 const IMG_SRC_HOSTS = ['https://*.walletconnect.com', 'https://*.githubusercontent.com', 'https://raw.githubusercontent.com'];
 const cspHeader = `
   default-src 'self';
@@ -55,7 +55,7 @@ const securityHeaders = [
         },
       ]
     : [])
-]
+];
 
 const nextConfig = {
   webpack(config) {
@@ -72,7 +72,7 @@ const nextConfig = {
         source: '/(.*)',
         headers: securityHeaders,
       },
-    ]
+    ];
   },
 
   env: {
@@ -82,11 +82,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  },
+
   sentry: {
     hideSourceMaps: true,
     tunnelRoute: "/monitoring-tunnel",
   },
-}
+};
 
 const sentryWebpackPluginOptions = {
   org: "hyperlane",
