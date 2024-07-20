@@ -19,7 +19,9 @@ export async function assembleChainMetadata() {
   if (!result.success) {
     logger.warn('Invalid chain config', result.error);
     throw new Error(`Invalid chain config: ${result.error.toString()}`);
-  }
+  };
+
+  console.log(result.data,"result")
   const customChainMetadata = result.data as ChainMap<ChainMetadata>;
 
   const registry = new GithubRegistry({ uri: config.registryUrl });
@@ -34,6 +36,6 @@ export async function assembleChainMetadata() {
     await registry.listRegistryContent();
   }
 
-  const chains = { ...defaultChainMetadata, ...customChainMetadata };
+  const chains = { ...defaultChainMetadata, ...customChainMetadata  };
   return { chains, registry };
 }

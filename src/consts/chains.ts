@@ -1,3 +1,4 @@
+import { sepolia } from '@hyperlane-xyz/registry';
 import { ChainMap, ChainMetadata, ExplorerFamily } from '@hyperlane-xyz/sdk';
 import { ProtocolType } from '@hyperlane-xyz/utils';
 
@@ -16,10 +17,10 @@ export const chains: ChainMap<ChainMetadata & { mailbox?: Address }> = {
     rpcUrls: [{ http: 'https://dchaintestnet-2713017997578000-1.jsonrpc.testnet.sagarpc.io' }],
     blockExplorers: [
       {
-        name: 'MyCustomScan',
-        url: 'https://mycustomchain-scan.com',
+        name: 'Block Explorer',
+        url: 'https://dchaintestnet-2713017997578000-1.testnet.sagaexplorer.io',
         apiUrl: 'https://api.mycustomchain-scan.com/api',
-        family: ExplorerFamily.Etherscan,
+        family: ExplorerFamily.Blockscout,
       },
     ],
     blocks: {
@@ -27,6 +28,7 @@ export const chains: ChainMap<ChainMetadata & { mailbox?: Address }> = {
       reorgPeriod: 1,
       estimateBlockTime: 10,
     },
-    logoURI: '/logo.svg',
+    logoURI: '/dchain.png',
   },
+  sepolia : sepolia
 };
